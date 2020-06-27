@@ -1,0 +1,287 @@
+/*
+Bera light theme for inkdrop
+*/
+
+@import "./colors";
+
+.editor {
+
+  /* Color scheme for code-mirror */
+
+  .CodeMirror {
+    color-profile: sRGB;
+    rendering-intent: auto;
+    background-color: @background;
+    color: @foreground;
+
+    .CodeMirror-widget {
+      text-shadow: none;
+    }
+
+    .cm-header {
+      color: @header;
+    }
+
+    .cm-quote {
+      color: @quote;
+      font-style: italic;
+    }
+
+    .cm-keyword,
+    .cm-formatting-list.cm-variable-2 {
+      color: @solar-red;
+    }
+
+    .cm-atom,
+    .cm-formatting-list.cm-variable-3 {
+      color: @solar-yellow;
+    }
+
+    .list-line.list-line-1.CodeMirror-line > span > span:last-child,
+    .list-line.list-line-2.CodeMirror-line > span > span:last-child {
+      color: @foreground;
+    }
+
+    .cm-number {
+      color: @solar-magenta;
+    }
+
+    .cm-def {
+      color: @solar-cyan;
+    }
+
+    .cm-variable {
+      color: @solar-black;
+    }
+
+    .cm-variable-2 {
+      color: @solar-yellow;
+    }
+
+    .cm-variable-3 {
+      color: @solar-violet;
+    }
+
+    .cm-property {
+      color: @solar-cyan;
+    }
+
+    .cm-operator {
+      color: @solar-violet;
+    }
+
+    .cm-comment {
+      color: @comment;
+      font-style: italic;
+    }
+
+    .cm-string {
+      color: @solar-green;
+    }
+
+    .cm-string-2 {
+      color: @solar-yellow;
+    }
+
+    .cm-meta {
+      color: @solar-green;
+    }
+
+    .cm-qualifier {
+      color: @solar-yellow;
+    }
+
+    .cm-builtin {
+      color: @solar-magenta;
+    }
+
+    .cm-bracket {
+      color: @solar-orange;
+    }
+
+    .CodeMirror-matchingbracket {
+      color: @solar-red  !important;
+      background-color: @quote;
+      text-shadow: none;
+      padding: 4px 0 4px 0 !important;
+    }
+
+    .CodeMirror-nonmatchingbracket {
+      color: @solar-red  !important;
+    }
+
+    .cm-tag {
+      color: @quote;
+    }
+
+    .cm-attribute {
+      color: @solar-cyan;
+    }
+
+    /*
+    .cm-hr {
+      color: transparent;
+      border-top: 1px solid @header;
+      display: block;
+    }
+    */
+    .cm-hr {
+      color: @solar-yellow;
+    }
+
+    .cm-link,
+    .cm-url {
+      color: @link-color;
+      text-underline-position: under;
+    }
+
+    .cm-special {
+      color: @solar-violet;
+    }
+
+    .cm-em {
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-underline-position: under;
+      text-decoration-color: @link-color !important;
+    }
+
+    .cm-strikethrough {
+      color: @quote;
+    }
+
+    .cm-strong {
+      font-weight: bold;
+      color: @strong;
+    }
+
+    .cm-error,
+    .cm-invalidchar {
+      color: @header;
+      border-bottom: 1px dotted @solar-red;
+    }
+
+    .cm-whitespace::before {
+      color: @header;
+      opacity: 0.4;
+    }
+
+    // carriage return
+    .CodeMirror-code>div>pre>span::after,
+    .CodeMirror-line>span::after {
+      color: @header;
+      opacity: 0.4;
+    }
+
+    .cm-inline-code {
+      background: @inline-code;
+      color: @background;
+      padding: 4px;
+    }
+
+    pre .cm-inline-code:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    pre .cm-inline-code:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    .gfm-codeblock-bg.CodeMirror-linebackground {
+      background: @code-background;
+      border-radius: 2px;
+    }
+
+    .cm-table-sep,
+    .table-row.table-row-1 {
+      color: @table;
+    }
+  }
+
+  .CodeMirror div.CodeMirror-selected {
+    background: @selected;
+  }
+
+  .CodeMirror .CodeMirror-line::selection,
+  .CodeMirror-line>span::selection,
+  .CodeMirror-line>span>span::selection {
+    background: @selected;
+  }
+
+  .CodeMirror .CodeMirror-line::-moz-selection,
+  .cm-s-ligh .CodeMirror-line>span::-moz-selection,
+  .cm-s-ligh .CodeMirror-line>span>span::-moz-selection {
+    background: @selected;
+  }
+
+  /* Editor styling */
+
+
+
+  /* Little shadow on the view-port of the buffer view */
+  .CodeMirror {
+    -moz-box-shadow: inset 7px 0 12px -6px #000;
+    -webkit-box-shadow: inset 7px 0 12px -6px #000;
+    box-shadow: inset 7px 0 12px -6px #000;
+  }
+
+  /* Gutter border and some shadow from it  */
+  .CodeMirror .CodeMirror-gutters {
+    border-right: none;
+  }
+
+  /* Gutter colors and line number styling based of color scheme (dark / light) */
+
+  /* Light */
+  .CodeMirror .CodeMirror-gutters {
+    background-color: @background;
+    border-color: @selected;
+  }
+
+  /* Common */
+  .CodeMirror .CodeMirror-linenumber {
+    color: @active-line-fg;
+    padding: 0 5px;
+  }
+
+  .CodeMirror .CodeMirror-guttermarker-subtle {
+    color: @header;
+  }
+
+  .CodeMirror .CodeMirror-guttermarker {
+    color: @solar-orange;
+  }
+
+  .CodeMirror .CodeMirror-gutter .CodeMirror-gutter-text {
+    color: @header;
+  }
+
+  .CodeMirror .CodeMirror-cursor {
+    border-left: 2px solid @link-color;
+  }
+
+  /*
+  Active line. Negative margin compensates left padding of the text in the
+  view-port
+  */
+
+  .CodeMirror .CodeMirror-activeline-background {
+    background: none;
+  }
+
+  .CodeMirror .CodeMirror-activeline-gutter {
+    background: @active-line-bg  !important;
+  }
+
+  .cm-formatting-header {
+    opacity: 0.2;
+  }
+
+  .cm-formatting:not(.cm-inline-code):not(.cm-url):not(.cm-link):not(.cm-formatting-list-ol) {
+    opacity: 0.5;
+  }
+
+  .CodeMirror .CodeMirror-linewidget img.inline-widget {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
