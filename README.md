@@ -7,7 +7,7 @@ Bear.app like light syntax theme for Inkdrop.
 ## How to install
 
 ```
-$ ipm install bera-syntax
+$ ipm install bera-light-syntax
 
 # Additional
 $ ipm install bera-light-ui
