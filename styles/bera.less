@@ -174,17 +174,24 @@ Bera light theme for inkdrop
     }
 
     .cm-inline-code {
-      background: @inline-code;
-      color: @background;
-      padding: 4px;
+      background: @code-background;
+      color: @foreground;
+      padding: 3px 1px;
+      border-radius: 0;
+      border: 1px solid @inline-code;
+      border-width: 1px 0 1px 0;
     }
 
     pre .cm-inline-code:first-child {
-      border-radius: 4px 0 0 4px;
+      border-width: 1px 0 1px 1px !important;
+      padding-right: 0;
+      border-radius: 3px 0 0 3px;
     }
 
     pre .cm-inline-code:last-child {
-      border-radius: 0 4px 4px 0;
+      border-width: 1px 1px 1px 0 !important;
+      padding-left: 0;
+      border-radius: 0 3px 3px 0;
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
@@ -240,8 +247,9 @@ Bera light theme for inkdrop
 
   /* Common */
   .CodeMirror .CodeMirror-linenumber {
-    color: @active-line-fg;
+    color: @comment;
     padding: 0 5px;
+    text-align: center;
   }
 
   .CodeMirror .CodeMirror-guttermarker-subtle {
@@ -271,6 +279,9 @@ Bera light theme for inkdrop
 
   .CodeMirror .CodeMirror-activeline-gutter {
     background: @active-line-bg  !important;
+    .CodeMirror-linenumber {
+      color: @active-line-fg;
+    }
   }
 
   .cm-formatting-header {
